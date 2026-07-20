@@ -208,10 +208,3 @@ home.packages = with pkgs; [
 ];
 ```
 
-## 📝 License
-
-Feel free to use and modify this configuration for your own system. Consider adding an appropriate license file if you plan to share it publicly.
-
----
-
-**Questions or issues?** Create an issue or a discussion in this repository! 🚀
