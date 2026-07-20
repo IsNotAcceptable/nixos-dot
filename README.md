@@ -5,7 +5,7 @@ A comprehensive repository of configuration files (dotfiles) for a NixOS system.
 ## 📁 Repository Structure
 
 ```
-nixos-dot/
+nixos/
 ├── configuration.nix          # Main NixOS system configuration file
 ├── hardware-configuration.nix # Hardware configuration (auto-generated)
 ├── flake.nix                  # Flake configuration for reproducible builds
@@ -41,8 +41,8 @@ NixOS dotfiles are declarative: you describe the *desired state* of your system,
 1. Clone the repository to your system:
 
 ```bash
-sudo git clone https://github.com/IsNotAcceptable/nixos-dot /etc/nixos/nixos-config
-cd /etc/nixos/nixos-config
+sudo git clone https://github.com/IsNotAcceptable/nixos-dot /etc/nixos/
+cd /etc/nixos/
 ```
 
 2. **Important**: The `home/` folder must stay in the root of the repository alongside all other files. Do not move it!
@@ -122,7 +122,7 @@ User-specific environment configuration:
 
 ### Update configuration
 ```bash
-cd /etc/nixos/nixos-config
+cd /etc/nixos
 git pull
 sudo nixos-rebuild switch --flake .#empty
 ```
