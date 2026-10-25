@@ -1,0 +1,131 @@
+/* =============================================================================
+ * Глобальные настройки панели
+ * ============================================================================= */
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.9);
+    color: #cdd6f4;
+    font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NF", "Font Awesome 6 Free", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Стилизация каждого модуля как отдельной плитки */
+#wireplumber, 
+#pulseaudio, 
+#network, 
+#power-profiles-daemon, 
+#temperature, 
+#backlight, 
+#custom-drift_lang, 
+#custom-drift_pos, 
+#keyboard-state, 
+#battery, 
+#clock, 
+#tray {
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    background-color: rgba(45, 45, 70, 0.6);
+}
+
+/* =============================================================================
+ * Левая и центральная части
+ * ============================================================================= */
+
+/* Координаты drift_pos слева */
+#custom-drift_pos {
+    color: #89b4fa; /* Приятный акцентный синий цвет */
+    margin: 4px 6px;
+}
+
+#taskbar button {
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    background-color: rgba(45, 45, 70, 0.4);
+    color: #cdd6f4;
+}
+
+#taskbar button.active {
+    background-color: rgba(137, 180, 250, 0.2);
+    border-bottom: 2px solid #89b4fa;
+}
+
+/* =============================================================================
+ * Цветовые акценты для текста и иконок
+ * ============================================================================= */
+
+/* Звук и Микрофон */
+#wireplumber { color: #a6e3a1; }
+#wireplumber.muted { color: #f38ba8; }
+
+#pulseaudio { color: #f5c2e7; }
+#pulseaudio.muted { color: #f38ba8; }
+
+/* Сеть */
+#network { color: #89dceb; }
+#network.disconnected { color: #f38ba8; }
+
+/* Питание, Температура, Яркость */
+#power-profiles-daemon { color: #f9e2af; }
+#temperature { color: #fab387; }
+#backlight { color: #f9e2af; }
+
+/* Язык drift_lang */
+#custom-drift_lang {
+    color: #89dceb; /* Нежный мятный/бирюзовый оттенок */
+}
+
+/* Родные переключатели замков клавиатуры */
+#keyboard-state {
+    color: #cba6f7; /* Оставлен исходный фиолетовый */
+}
+
+/* Батарея */
+#battery { color: #a6e3a1; }
+#battery.warning:not(.charging) { color: #fab387; }
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    background-color: rgba(243, 139, 168, 0.3);
+}
+
+/* Часы */
+#clock {
+    color: #cdd6f4;
+}
+
+/* =============================================================================
+ * Подсветка только активных (кликабельных) модулей при наведении в своём цвете
+ * ============================================================================= */
+
+/* Звук динамиков (Зеленый акцент) */
+#wireplumber:hover {
+    background-color: rgba(166, 227, 161, 0.15);
+}
+
+/* Микрофон (Розовый акцент) */
+#pulseaudio:hover {
+    background-color: rgba(245, 194, 231, 0.15);
+}
+
+/* Температура (Оранжевый акцент) */
+#temperature:hover {
+    background-color: rgba(250, 179, 135, 0.15);
+}
+
+/* Яркость экрана (Желтый акцент) */
+#backlight:hover {
+    background-color: rgba(249, 226, 175, 0.15);
+}
+
+/* Профили питания (Желтый акцент) */
+#power-profiles-daemon:hover {
+    background-color: rgba(249, 226, 175, 0.15);
+}
+
+/* Часы (Светлый/Белый акцент под цвет текста) */
+#clock:hover {
+    background-color: rgba(205, 214, 244, 0.15);
+}
+

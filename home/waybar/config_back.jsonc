@@ -1,0 +1,145 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "height": 30,
+    "spacing": 0,
+
+    "modules-left": [
+        "custom/launcher"
+    ],
+
+    "modules-center": [
+        "wlr/taskbar"
+    ],
+
+    "modules-right": [
+        "wireplumber",
+        "pulseaudio#microphone",
+        "network",
+        "power-profiles-daemon",
+        "temperature",
+        "backlight",
+        "keyboard-state",
+        "battery",
+        "clock",
+        "tray"
+    ],
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "icon-theme": "Papirus-Dark",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": ["wofi", "pavucontrol"],
+        "all-outputs": false
+    },
+
+    "custom/launcher": {
+        "format": "LOL",
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
+
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "Muted ",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ""
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol"
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "Muted ",
+        "on-click": "pavucontrol",
+
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%+",
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%-",
+        "scroll-step": 5
+    },
+
+    "network": {
+        "interval": 60,
+        "format-wifi": "{essid} ",
+        "format-ethernet": "",
+        "format-linked": "",
+        "format-disconnected": "",
+
+        "tooltip-format": "{ifname}: {gwaddr} "
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["","","","",""],
+        "on-click": "kitty btop"
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "scroll-step": 5,
+        "format-icons": ["","","","","","","","","","","","","","",""]
+    },
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": {
+            "numlock": "NUM {icon}",
+            "capslock": "CAPS {icon} "
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "{icon} ",
+        "format-plugged": " ",
+        "format-full": "",
+        "format-icons": ["","","","","","","","","",""],
+        "tooltip-format": "Заряд: {capacity}%\nЗдоровье: {health}%\nВремя: {time}"
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%A %B, %d %m %Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "tray": {
+        "spacing": 10
+    }
+}

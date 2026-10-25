@@ -1,0 +1,87 @@
+/* =============================================================================
+ * Глобальные настройки панели
+ * ============================================================================= */
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.9);
+    color: #cdd6f4;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Стилизация каждого модуля как отдельной плитки */
+#wireplumber, #pulseaudio, #network, #power-profiles-daemon, #temperature, #backlight, #keyboard-state, #battery, #clock, #tray {
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    background-color: rgba(45, 45, 70, 0.6);
+}
+
+/* =============================================================================
+ * Левая и центральная части
+ * ============================================================================= */
+
+#custom-launcher {
+    background-color: #89b4fa;
+    color: #11111b;
+    padding: 0 15px;
+    margin: 4px 6px;
+    border-radius: 6px;
+}
+
+#custom-launcher:hover {
+    background-color: #b4befe;
+}
+
+#taskbar button {
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    background-color: rgba(45, 45, 70, 0.4);
+    color: #cdd6f4;
+}
+
+#taskbar button.active {
+    background-color: rgba(137, 180, 250, 0.2);
+    border-bottom: 2px solid #89b4fa;
+}
+
+/* =============================================================================
+ * Цветовые акценты для текста и иконок
+ * ============================================================================= */
+
+/* Звук и Микрофон */
+#wireplumber { color: #a6e3a1; }
+#wireplumber.muted { color: #f38ba8; }
+
+#pulseaudio { color: #f5c2e7; }
+#pulseaudio.muted { color: #f38ba8; }
+
+/* Сеть */
+#network { color: #89dceb; }
+#network.disconnected { color: #f38ba8; }
+
+/* Питание, Температура, Яркость */
+#power-profiles-daemon { color: #f9e2af; }
+#temperature { color: #fab387; }
+#backlight { color: #f9e2af; }
+
+/* Индикатор клавиатуры (Чистый пастельный цвет текста без фоновых подложек) */
+#keyboard-state {
+    color: #cba6f7;
+}
+
+/* Батарея */
+#battery { color: #a6e3a1; }
+#battery.warning:not(.charging) { color: #fab387; }
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    background-color: rgba(243, 139, 168, 0.3);
+}
+
+/* Часы */
+#clock {
+    color: #cdd6f4;
+    background-color: rgba(137, 180, 250, 0.2);
+}
